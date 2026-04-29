@@ -38,53 +38,56 @@ export default function HomePageContent({ locale, t }: Props) {
   return (
     <>
       <LocaleHeader locale={locale} t={t} />
-      <main className="pt-16">
-        {/* Hero */}
-        <section className="bg-secondary">
-          <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
-                  {h.heroKicker}
-                </p>
-                <h1 className="text-4xl md:text-5xl font-bold text-brand-graphite leading-tight text-balance">
-                  {h.heroHeading}
-                </h1>
-                <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed max-w-lg">
-                  {h.heroBody}
-                </p>
-                <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                  <Link
-                    href={`${prefix}/contact`}
-                    className="bg-primary text-primary-foreground px-6 py-3 rounded font-semibold text-sm hover:bg-brand-teal-dark transition-colors text-center"
-                  >
-                    {h.requestQuote}
-                  </Link>
-                  <Link
-                    href={`${prefix}/products`}
-                    className="border border-border text-foreground px-6 py-3 rounded font-semibold text-sm hover:bg-white hover:border-primary/40 transition-colors text-center flex items-center justify-center gap-2"
-                  >
-                    {h.exploreProducts} <ArrowRight className="w-4 h-4" />
-                  </Link>
+      <main>
+        {/* Hero — full-bleed image with overlay text */}
+        <section className="relative min-h-[92vh] flex items-end overflow-hidden">
+          {/* Background photo */}
+          <Image
+            src="/images/hero-packaging.jpg"
+            alt="VELPLEV flexible packaging products"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-brand-graphite/60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-graphite/90 via-brand-graphite/30 to-transparent" />
+
+          {/* Content */}
+          <div className="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-8 pb-16 md:pb-24 pt-32">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-5">
+              {h.heroKicker}
+            </p>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05] text-balance max-w-4xl">
+              {h.heroHeading}
+            </h1>
+            <p className="mt-6 text-base md:text-lg text-white/70 leading-relaxed max-w-2xl">
+              {h.heroBody}
+            </p>
+
+            <div className="mt-10 flex flex-col sm:flex-row gap-3">
+              <Link
+                href={`${prefix}/contact`}
+                className="bg-primary text-white px-7 py-3.5 rounded font-semibold text-sm hover:bg-brand-teal-dark transition-colors text-center"
+              >
+                {h.requestQuote}
+              </Link>
+              <Link
+                href={`${prefix}/products`}
+                className="border border-white/30 text-white px-7 py-3.5 rounded font-semibold text-sm hover:bg-white/10 hover:border-white/50 transition-colors text-center flex items-center justify-center gap-2"
+              >
+                {h.exploreProducts} <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
+            {/* Trust bullets row */}
+            <div className="mt-12 flex flex-wrap gap-x-8 gap-y-3 border-t border-white/15 pt-8">
+              {h.trustBullets.map((b) => (
+                <div key={b} className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                  <span className="text-sm text-white/70">{b}</span>
                 </div>
-                <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {h.trustBullets.map((b) => (
-                    <div key={b} className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
-                      <span className="text-sm text-muted-foreground">{b}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="relative rounded-xl overflow-hidden shadow-lg aspect-[4/3]">
-                <Image
-                  src="/images/hero-packaging.jpg"
-                  alt="VELPLEV flexible packaging products"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
+              ))}
             </div>
           </div>
         </section>

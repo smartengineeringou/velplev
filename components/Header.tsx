@@ -46,15 +46,17 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-shadow duration-200 bg-white ${
-        scrolled ? 'shadow-sm border-b border-border' : 'border-b border-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? 'bg-white shadow-sm border-b border-border'
+          : 'bg-transparent border-b border-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <span className="text-xl font-bold tracking-widest text-primary uppercase">
+            <span className={`text-xl font-bold tracking-widest uppercase transition-colors duration-300 ${scrolled ? 'text-primary' : 'text-white'}`}>
               VELPLEV
             </span>
           </Link>
@@ -70,7 +72,7 @@ export default function Header() {
               >
                 <Link
                   href={item.href}
-                  className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors"
+                  className={`flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors duration-300 hover:text-primary ${scrolled ? 'text-foreground' : 'text-white/90'}`}
                 >
                   {item.label}
                   {item.children && <ChevronDown className="w-3.5 h-3.5 opacity-60" />}
@@ -96,7 +98,7 @@ export default function Header() {
           {/* Right side */}
           <div className="hidden lg:flex items-center gap-4">
             {/* Language switcher */}
-            <div className="flex items-center gap-1 text-xs text-muted-foreground">
+            <div className={`flex items-center gap-1 text-xs transition-colors duration-300 ${scrolled ? 'text-muted-foreground' : 'text-white/60'}`}>
               <Link href="/lv" className="hover:text-primary font-medium transition-colors">LV</Link>
               <span>/</span>
               <span className="text-primary font-semibold">EN</span>
@@ -105,7 +107,7 @@ export default function Header() {
             </div>
             <Link
               href="/contact"
-              className="bg-primary text-primary-foreground px-4 py-2 rounded text-sm font-semibold hover:bg-brand-teal-dark transition-colors"
+              className="bg-primary text-white px-4 py-2 rounded text-sm font-semibold hover:bg-brand-teal-dark transition-colors"
             >
               Request a Quote
             </Link>
@@ -113,7 +115,7 @@ export default function Header() {
 
           {/* Mobile toggle */}
           <button
-            className="lg:hidden p-2 text-foreground"
+            className={`lg:hidden p-2 transition-colors duration-300 ${scrolled ? 'text-foreground' : 'text-white'}`}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
