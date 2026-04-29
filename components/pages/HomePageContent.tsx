@@ -43,8 +43,8 @@ export default function HomePageContent({ locale, t }: Props) {
         <section className="relative min-h-[92vh] flex items-end overflow-hidden">
           {/* Background photo */}
           <Image
-            src="/images/hero-packaging.jpg"
-            alt="VELPLEV flexible packaging products"
+            src="/images/manufacturing.jpg"
+            alt="VELPLEV packaging production facility — flexible bag manufacturing machines"
             fill
             className="object-cover object-center"
             priority
