@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://velplev.lv/sitemap.xml
+Sitemap: https://velplev.vercel.app/sitemap.xml
