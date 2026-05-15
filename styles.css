@@ -76,6 +76,61 @@ a {
   justify-content: flex-end;
 }
 
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.menu-toggle span,
+.menu-toggle span::before,
+.menu-toggle span::after {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.menu-toggle span {
+  position: relative;
+}
+
+.menu-toggle span::before,
+.menu-toggle span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.menu-toggle span::before {
+  top: -7px;
+}
+
+.menu-toggle span::after {
+  top: 7px;
+}
+
+.site-header.menu-open .menu-toggle span {
+  background: transparent;
+}
+
+.site-header.menu-open .menu-toggle span::before {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.site-header.menu-open .menu-toggle span::after {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 .nav-links a {
   color: var(--white);
   text-decoration: none;
@@ -586,12 +641,24 @@ textarea {
   .nav {
     min-height: auto;
     padding: 16px 0;
-    align-items: flex-start;
-    flex-direction: column;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
   }
 
   .nav-links {
+    display: none;
+    width: 100%;
     justify-content: flex-start;
+    padding-top: 8px;
+  }
+
+  .site-header.menu-open .nav-links {
+    display: flex;
   }
 
   .hero {
@@ -625,9 +692,13 @@ textarea {
 
   .nav-links {
     width: 100%;
-    display: grid;
+    display: none;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 6px;
+  }
+
+  .site-header.menu-open .nav-links {
+    display: grid;
   }
 
   .nav-links a {
@@ -688,5 +759,37 @@ textarea {
     width: 44px;
     height: 44px;
     font-size: 22px;
+  }
+}
+
+@media (min-width: 901px) {
+  .site-header.is-scrolled .menu-toggle {
+    display: inline-flex;
+  }
+
+  .site-header.is-scrolled .nav {
+    position: relative;
+    min-height: 68px;
+  }
+
+  .site-header.is-scrolled .nav-links {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    width: 280px;
+    padding: 10px;
+    border-radius: 8px;
+    background: var(--blue);
+    box-shadow: var(--shadow);
+  }
+
+  .site-header.is-scrolled.menu-open .nav-links {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .site-header.is-scrolled .nav-links a {
+    text-align: left;
   }
 }
