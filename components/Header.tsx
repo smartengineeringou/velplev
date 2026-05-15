@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Menu, X, ChevronDown } from 'lucide-react'
 
@@ -43,10 +44,15 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-xl font-bold tracking-widest text-primary uppercase">
-              VELPLEV
-            </span>
+          <Link href="/" className="flex items-center" aria-label="VELPLEV">
+            <Image
+              src="/images/velplev-logo.svg"
+              alt="VELPLEV"
+              width={140}
+              height={35}
+              priority
+              className="h-9 w-auto"
+            />
           </Link>
 
           {/* Desktop Nav */}

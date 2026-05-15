@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { Mail, Phone, MapPin } from 'lucide-react'
 import type { Locale, Translations } from '@/lib/translations'
@@ -21,9 +22,13 @@ export default function LocaleFooter({ locale, t }: Props) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <span className="text-xl font-bold tracking-widest uppercase text-white">
-              VELPLEV
-            </span>
+            <Image
+              src="/images/velplev-logo.svg"
+              alt="VELPLEV"
+              width={160}
+              height={40}
+              className="h-10 w-auto"
+            />
             <p className="mt-4 text-sm text-white/60 leading-relaxed">{f.tagline}</p>
             <p className="mt-4 text-xs text-white/40 uppercase tracking-wider">{f.b2bNote}</p>
           </div>

@@ -10,16 +10,16 @@ export default function AppleIcon() {
         style={{
           width: '100%',
           height: '100%',
-          background: '#0f504b',
+          background: '#07489a',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          borderRadius: 32,
-          fontSize: 120,
-          fontWeight: 700,
-          color: '#ffffff',
+          borderRadius: 40,
+          fontSize: 130,
+          fontWeight: 800,
+          color: '#e8ad47',
           fontFamily: 'system-ui, sans-serif',
-          letterSpacing: -4,
+          letterSpacing: -6,
         }}
       >
         V
