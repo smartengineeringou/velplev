@@ -249,6 +249,10 @@ h3 {
   margin-bottom: 32px;
 }
 
+.section-subhead {
+  margin-top: 46px;
+}
+
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
