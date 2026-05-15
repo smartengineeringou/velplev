@@ -18,16 +18,6 @@ const navItems = [
       { label: 'Industrial & Custom', href: '/products#industrial' },
     ],
   },
-  {
-    label: 'Industries',
-    href: '/industries',
-    children: [
-      { label: 'Bakeries & Confectionery', href: '/industries#bakery' },
-      { label: 'Food Manufacturers', href: '/industries#food' },
-      { label: 'Retail & Promotional', href: '/industries#retail' },
-      { label: 'Office & Stationery', href: '/industries#office' },
-    ],
-  },
   { label: 'Custom Printing', href: '/custom-printing' },
   { label: 'Manufacturing', href: '/manufacturing' },
   { label: 'Contact', href: '/contact' },

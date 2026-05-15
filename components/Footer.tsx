@@ -11,7 +11,6 @@ const productLinks = [
 
 const companyLinks = [
   { label: 'Manufacturing', href: '/manufacturing' },
-  { label: 'Industries', href: '/industries' },
   { label: 'Custom Printing', href: '/custom-printing' },
   { label: 'Contact', href: '/contact' },
   { label: 'Request a Quote', href: '/contact' },

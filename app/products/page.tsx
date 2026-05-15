@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Package } from 'lucide-react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import CtaBand from '@/components/CtaBand'
@@ -105,9 +105,15 @@ export default function ProductsPage() {
                   index % 2 === 1 ? 'lg:[&>*:first-child]:order-2' : ''
                 }`}
               >
-                <div className="relative rounded-xl overflow-hidden aspect-[4/3] shadow-sm bg-secondary">
-                  <Image src={cat.image} alt={cat.title} fill className="object-cover" />
-                </div>
+                {cat.id === 'consumer' || cat.id === 'industrial' ? (
+                  <div className="relative rounded-xl overflow-hidden aspect-[4/3] shadow-sm bg-brand-teal-light flex items-center justify-center">
+                    <Package className="w-20 h-20 text-primary/25" strokeWidth={1.25} />
+                  </div>
+                ) : (
+                  <div className="relative rounded-xl overflow-hidden aspect-[4/3] shadow-sm bg-secondary">
+                    <Image src={cat.image} alt={cat.title} fill className="object-cover" />
+                  </div>
+                )}
                 <div>
                   <h2 className="text-2xl font-bold text-brand-graphite mb-3">{cat.title}</h2>
                   <p className="text-muted-foreground leading-relaxed">{cat.description}</p>

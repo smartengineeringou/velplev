@@ -171,42 +171,65 @@ export default function HomePageContent({ locale, t }: Props) {
           </div>
         </section>
 
-        {/* Industries */}
+        {/* About company */}
         <section className="py-20 px-4 md:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="max-w-3xl mb-10">
+              <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-2">
+                {h.about.kicker}
+              </p>
+              <h2 className="text-3xl font-bold text-brand-graphite text-balance">
+                {h.about.heading}
+              </h2>
+              <p className="mt-4 text-muted-foreground leading-relaxed">{h.about.intro1}</p>
+              <p className="mt-3 text-muted-foreground leading-relaxed">{h.about.intro2}</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-2">
-                  {h.industriesKicker}
-                </p>
-                <h2 className="text-3xl font-bold text-brand-graphite text-balance">
-                  {h.industriesHeading}
-                </h2>
-                <p className="mt-4 text-muted-foreground leading-relaxed">{h.industriesBody}</p>
-                <div className="mt-8 grid grid-cols-2 gap-3">
-                  {h.industries.map((ind) => (
-                    <div key={ind} className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                      <span className="text-sm text-foreground">{ind}</span>
-                    </div>
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-primary mb-4">
+                  {h.about.foodHeading}
+                </h3>
+                <ul className="flex flex-col gap-2">
+                  {h.about.foodItems.map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                      <span className="text-sm text-foreground">{item}</span>
+                    </li>
                   ))}
-                </div>
-                <Link
-                  href={`${prefix}/industries`}
-                  className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all"
-                >
-                  {h.viewIndustrySolutions} <ArrowRight className="w-4 h-4" />
-                </Link>
+                </ul>
               </div>
-              <div className="relative rounded-xl overflow-hidden shadow aspect-[4/3]">
-                <Image
-                  src="/images/manufacturing.jpg"
-                  alt="VELPLEV manufacturing facility"
-                  fill
-                  className="object-cover"
-                />
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-primary mb-4">
+                  {h.about.nonFoodHeading}
+                </h3>
+                <ul className="flex flex-col gap-2">
+                  {h.about.nonFoodItems.map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                      <span className="text-sm text-foreground">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-primary mb-4">
+                  {h.about.typesHeading}
+                </h3>
+                <ul className="flex flex-col gap-2">
+                  {h.about.typesItems.map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                      <span className="text-sm text-foreground">{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
+
+            <p className="mt-12 text-muted-foreground leading-relaxed max-w-4xl">
+              {h.about.closing}
+            </p>
           </div>
         </section>
 

@@ -26,13 +26,6 @@ export interface NavTranslations {
     printed: string
     industrial: string
   }
-  industries: string
-  industriesChildren: {
-    bakery: string
-    food: string
-    retail: string
-    office: string
-  }
   customPrinting: string
   manufacturing: string
   contact: string
@@ -74,10 +67,6 @@ export interface HomeTranslations {
   viewDetails: string
   whyKicker: string
   whyHeading: string
-  industriesKicker: string
-  industriesHeading: string
-  industriesBody: string
-  viewIndustrySolutions: string
   printingKicker: string
   printingHeading: string
   printingBody: string
@@ -96,7 +85,19 @@ export interface HomeTranslations {
     title: string
     body: string
   }[]
-  industries: string[]
+  about: {
+    kicker: string
+    heading: string
+    intro1: string
+    intro2: string
+    foodHeading: string
+    foodItems: string[]
+    nonFoodHeading: string
+    nonFoodItems: string[]
+    typesHeading: string
+    typesItems: string[]
+    closing: string
+  }
 }
 
 export interface ProductsTranslations {
@@ -118,23 +119,6 @@ export interface ProductsTranslations {
     description: string
     applications: string[]
     bagTypes: string[]
-  }[]
-}
-
-export interface IndustriesTranslations {
-  kicker: string
-  heading: string
-  body: string
-  packagingGoals: string
-  relevantProducts: string
-  requestInquiry: string
-  browseProducts: string
-  segments: {
-    id: string
-    title: string
-    description: string
-    goals: string[]
-    products: string[]
   }[]
 }
 
@@ -244,7 +228,6 @@ export interface Translations {
   cta: CtaBandTranslations
   home: HomeTranslations
   products: ProductsTranslations
-  industries: IndustriesTranslations
   customPrinting: CustomPrintingTranslations
   manufacturing: ManufacturingTranslations
   contact: ContactTranslations
@@ -264,13 +247,6 @@ const en: Translations = {
       office: 'Office & Print',
       printed: 'Printed / Branded Bags',
       industrial: 'Industrial & Custom',
-    },
-    industries: 'Industries',
-    industriesChildren: {
-      bakery: 'Bakeries & Confectionery',
-      food: 'Food Manufacturers',
-      retail: 'Retail & Promotional',
-      office: 'Office & Stationery',
     },
     customPrinting: 'Custom Printing',
     manufacturing: 'Manufacturing',
@@ -293,7 +269,6 @@ const en: Translations = {
     ],
     companyLinks: [
       { label: 'Manufacturing', href: '/manufacturing' },
-      { label: 'Industries', href: '/industries' },
       { label: 'Custom Printing', href: '/custom-printing' },
       { label: 'Contact', href: '/contact' },
       { label: 'Request a Quote', href: '/contact' },
@@ -327,11 +302,6 @@ const en: Translations = {
     viewDetails: 'View details',
     whyKicker: 'Why VELPLEV',
     whyHeading: 'What we bring to your packaging supply',
-    industriesKicker: 'Industries',
-    industriesHeading: 'Packaging for multiple business sectors',
-    industriesBody:
-      'We supply packaging to businesses across food production, retail, printing, and industrial sectors. Our production is configured for custom formats and repeat B2B orders.',
-    viewIndustrySolutions: 'View industry solutions',
     printingKicker: 'Custom Printing',
     printingHeading: 'Printed packaging with your brand',
     printingBody:
@@ -416,16 +386,43 @@ const en: Translations = {
         body: 'Inquiry-driven process with direct communication. We respond to RFQs with concrete proposals, pricing, and production timelines.',
       },
     ],
-    industries: [
-      'Bakeries',
-      'Confectionery producers',
-      'Food manufacturers',
-      'Retail & supermarkets',
-      'Consumer goods brands',
-      'Office supply companies',
-      'Publishing & print',
-      'Promotional packaging',
-    ],
+    about: {
+      kicker: 'About VELPLEV',
+      heading: 'Producing flexible packaging since 1995',
+      intro1:
+        'A high level of production technology — based on imported equipment and the professionalism of our employees — allows us to consistently deliver excellent packaging quality.',
+      intro2:
+        'We manufacture a wide range of packaging from BOPP, CPP, LDPE, HDPE, PA/PE, PET/PE, and Mono PP films, as well as paper and foil.',
+      foodHeading: 'Food packaging',
+      foodItems: [
+        'Vegetables and fruits',
+        'Bulk and dry products',
+        'Confectionery',
+        'Bakery products',
+        'Fish and meat products',
+        'Frozen products',
+        'Coffee and tea',
+        'Printed bags',
+      ],
+      nonFoodHeading: 'Non-food packaging',
+      nonFoodItems: [
+        'Pet food and pet products',
+        'Soil and construction materials',
+        'Medical products',
+        'Stationery and office supplies',
+      ],
+      typesHeading: 'Types of packaging produced',
+      typesItems: [
+        'BOPP, CPP, LDPE, HDPE bags',
+        'Vacuum bags',
+        'Zip-lock bags',
+        'Bags with euro slot (euro hole)',
+        'Bags with adhesive tape',
+        'DOY PACK (stand-up pouches)',
+      ],
+      closing:
+        'Every inquiry is carefully evaluated and matched with an optimal solution based on our technical capabilities and accumulated experience. Our core principles are an individual approach to each client, on-time order fulfilment, and guaranteed product quality. A close-knit team — where each person is responsible for their part of the process — ensures attentive customer service, prompt resolution of any issues, and strict quality control. We welcome new partnerships and are confident our cooperation will be mutually beneficial and productive.',
+    },
   },
   products: {
     kicker: 'Products',
@@ -491,93 +488,6 @@ const en: Translations = {
           'Heavy-duty polyethylene bags and custom format packaging for industrial, commercial, and large volume applications. Custom dimensions and material thickness available.',
         applications: ['Industrial components', 'Bulk goods packaging', 'Commercial supply', 'Custom B2B requirements'],
         bagTypes: ['Heavy PE bags', 'Custom dimension bags', 'Large format bags', 'Bags with valve or closure'],
-      },
-    ],
-  },
-  industries: {
-    kicker: 'Industries',
-    heading: 'Packaging for your industry',
-    body: 'Different industries have different packaging requirements. We supply flexible packaging solutions matched to the specific needs of your sector — whether you are in food production, retail, or office supply.',
-    packagingGoals: 'Packaging goals',
-    relevantProducts: 'Relevant products',
-    requestInquiry: 'Request inquiry',
-    browseProducts: 'Browse products',
-    segments: [
-      {
-        id: 'bakery',
-        title: 'Bakeries & Confectionery',
-        description:
-          'Bakeries and confectionery producers require hygienic, attractive packaging that protects freshness and supports display. We produce a range of transparent and printed bag formats suited to bakery production workflows.',
-        goals: [
-          'Protect freshness and prevent contamination',
-          'Display product clearly to end customer',
-          'Support retail and point-of-sale presentation',
-          'Accommodate varying loaf and pastry sizes',
-        ],
-        products: [
-          'Perforated transparent PP bags for bread',
-          'Euro hanger bags for packaged pastries',
-          'Bottom-fold bags for loaves and rolls',
-          'Printed bags for branded bakery products',
-          'Bags with adhesive tape closure',
-        ],
-      },
-      {
-        id: 'food',
-        title: 'Food Manufacturers',
-        description:
-          'Food manufacturers sourcing packaging in volume need consistent quality, appropriate food-contact compliance, and reliable delivery. We supply both plain and printed packaging for dry food, confectionery, and processed food applications.',
-        goals: [
-          'Food-safe material compliance',
-          'Consistent bag dimensions for production line compatibility',
-          'Available in high volume repeat orders',
-          'Options for both branded and plain packaging',
-        ],
-        products: [
-          'PP and PE bags for direct food contact',
-          'Bags with valves for flour and powder products',
-          'Flat sealed bags for confectionery',
-          'Custom printed packaging for branded lines',
-          'Bags with euro hanger for retail display',
-        ],
-      },
-      {
-        id: 'retail',
-        title: 'Retail & Promotional',
-        description:
-          'Retailers and brand owners need packaging that communicates brand identity and supports shelf presence. We manufacture printed bags and branded packaging for retail and promotional end uses.',
-        goals: [
-          'Strong on-shelf visual presence',
-          'Brand consistency across packaging',
-          'Suitable for retail display formats',
-          'Promotional and seasonal packaging options',
-        ],
-        products: [
-          'Custom printed PP bags with logo',
-          'Carrier bags with branding',
-          'Bags with euro hole for hanging display',
-          'Private label production runs',
-          'Consumer goods packaging bags',
-        ],
-      },
-      {
-        id: 'office',
-        title: 'Office & Stationery',
-        description:
-          'Publishers, stationery producers, and office supply companies need clear, protective packaging that lets product show through while protecting from dust and handling damage during storage and transit.',
-        goals: [
-          'Transparent presentation of packaged product',
-          'Protection from dust, moisture, and handling',
-          'Suitable for stationery, books, and printed goods',
-          'Clean professional appearance for B2B shipment',
-        ],
-        products: [
-          'Clear PP flat bags for books and notebooks',
-          'Bags with adhesive tape closure',
-          'Custom sized bags for stationery kits',
-          'Euro hanger bags for retail display',
-          'Printed bags for branded stationery',
-        ],
       },
     ],
   },
@@ -777,13 +687,6 @@ const lv: Translations = {
       printed: 'Drukāti / zīmola maisi',
       industrial: 'Rūpnieciskais un pielāgotais',
     },
-    industries: 'Nozares',
-    industriesChildren: {
-      bakery: 'Maizes cepi un konditorejas ražotāji',
-      food: 'Pārtikas ražotāji',
-      retail: 'Tirdzniecība un reklāma',
-      office: 'Biroja un kancelejas preces',
-    },
     customPrinting: 'Pielāgota druka',
     manufacturing: 'Ražošana',
     contact: 'Kontakti',
@@ -805,7 +708,6 @@ const lv: Translations = {
     ],
     companyLinks: [
       { label: 'Ražošana', href: '/lv/manufacturing' },
-      { label: 'Nozares', href: '/lv/industries' },
       { label: 'Pielāgota druka', href: '/lv/custom-printing' },
       { label: 'Kontakti', href: '/lv/contact' },
       { label: 'Pieprasīt piedāvājumu', href: '/lv/contact' },
@@ -839,11 +741,6 @@ const lv: Translations = {
     viewDetails: 'Skatīt detaļas',
     whyKicker: 'Kāpēc VELPLEV',
     whyHeading: 'Ko mēs piedāvājam jūsu iepakojuma piegādei',
-    industriesKicker: 'Nozares',
-    industriesHeading: 'Iepakojums vairākām uzņēmējdarbības nozarēm',
-    industriesBody:
-      'Mēs piegādājam iepakojumu uzņēmumiem pārtikas ražošanas, mazumtirdzniecības, poligrāfijas un rūpniecības nozarēs. Mūsu ražošana ir konfigurēta pielāgotiem formātiem un atkārtotiem B2B pasūtījumiem.',
-    viewIndustrySolutions: 'Skatīt nozares risinājumus',
     printingKicker: 'Pielāgota druka',
     printingHeading: 'Drukāts iepakojums ar jūsu zīmolu',
     printingBody:
@@ -904,16 +801,43 @@ const lv: Translations = {
       { title: 'Ražošanas pieredze', body: 'Praktiskas zināšanas no reāliem ražošanas pasūtījumiem. Mēs saprotam iepakojuma prasības un varam konsultēt par formātiem, materiāliem un iespējamību.' },
       { title: 'B2B pasūtījumu apstrāde', body: 'Pieprasījumu virzīts process ar tiešu saziņu. Mēs atbildam uz piedāvājumu pieprasījumiem ar konkrētiem priekšlikumiem, cenām un ražošanas termiņiem.' },
     ],
-    industries: [
-      'Maizes cepumi',
-      'Konditorejas ražotāji',
-      'Pārtikas ražotāji',
-      'Mazumtirdzniecība un lielveikali',
-      'Patēriņa preču zīmoli',
-      'Biroja piederumu uzņēmumi',
-      'Izdevniecība un druka',
-      'Reklāmas iepakojums',
-    ],
+    about: {
+      kicker: 'Par VELPLEV',
+      heading: 'Elastīgā iepakojuma ražošana kopš 1995. gada',
+      intro1:
+        'Augsts ražošanas tehnoloģiju līmenis, kas balstīts uz importētām iekārtām un darbinieku profesionalitāti, ļauj sasniegt izcilu iepakojuma kvalitāti.',
+      intro2:
+        'Uzņēmums ražo plašu iepakojuma klāstu no BOPP, CPP, LDPE, HDPE, PA/PE, PET/PE, Mono PP plēvēm, kā arī no papīra un folijas.',
+      foodHeading: 'Pārtikas iepakojums',
+      foodItems: [
+        'dārzeņiem un augļiem',
+        'beramprecēm',
+        'konditorejas izstrādājumiem',
+        'maizes izstrādājumiem',
+        'zivju un gaļas produktiem',
+        'saldētiem produktiem',
+        'kafijai un tējai',
+        'maisi ar druku',
+      ],
+      nonFoodHeading: 'Nepārtikas iepakojums',
+      nonFoodItems: [
+        'iepakojums dzīvniekiem',
+        'iepakojums augsnei un būvmateriāliem',
+        'iepakojums medicīnas precēm',
+        'iepakojums kancelejas precēm',
+      ],
+      typesHeading: 'Ražotā iepakojuma veidi',
+      typesItems: [
+        'maisi no BOPP, CPP, LDPE, HDPE',
+        'vakuuma maisi',
+        'maisi ar zip slēdzeni',
+        'maisi ar eiroslotu (eiro caurumu)',
+        'maisi ar pašlīmējošo lenti',
+        'DOY PACK (stāvošie maisiņi)',
+      ],
+      closing:
+        'Katrs pieprasījums tiek rūpīgi izvērtēts, un, balstoties uz mūsu tehnoloģiskajām iespējām un uzkrāto pieredzi, tiek izvēlēti optimālie risinājumi. Mūsu darba pamatprincipi — individuāla pieeja katram klientam, savlaicīga pasūtījumu izpilde un garantēta produkcijas kvalitāte. Saliedēts kolektīvs, kurā katrs atbild par savu darba posmu, nodrošina uzmanīgu attieksmi pret pasūtītāju, ātru strīdīgu jautājumu risināšanu un stingru produkcijas kvalitātes kontroli. Aicinām jūs uz sadarbību. Esam pārliecināti, ka tā būs abpusēji izdevīga un auglīga.',
+    },
   },
   products: {
     kicker: 'Produkti',
@@ -935,21 +859,6 @@ const lv: Translations = {
       { id: 'office', title: 'Biroja un drukāšanas iepakojums', description: 'Aizsargājoši caurspīdīgi maisi grāmatām, kancelejas precēm, blociņiem un drukātiem materiāliem. Dzidri polipropilēna maisi, kas demonstrē produktu, vienlaikus aizsargājot no putekļiem un mitruma.', applications: ['Grāmatas un blociņi', 'Kancelejas priekšmetu komplekti', 'Drukātie materiāli', 'Biroja piederumu komplekti'], bagTypes: ['Plakanie caurspīdīgie maisi', 'Maisi ar euro pakaru', 'Maisi ar pašlīmējošo lenti', 'Pielāgota izmēra maisi'] },
       { id: 'printed', title: 'Zīmola / drukātie maisi', description: 'Pielāgoti drukāti elastīgā iepakojuma maisi ar logotipu, produkta vai zīmola dizainu. Drukāti uz PP vai PE materiāla. Piemēroti mazumtirdzniecībai, reklāmai un privātās etiķetes ražošanai.', applications: ['Mazumtirdzniecības zīmola iepakojums', 'Reklāmas maisi', 'Privātās etiķetes ražošana', 'Pasākumu un mārketinga iepakojums'], bagTypes: ['Drukātie PP maisi', 'Drukātie PE maisi', 'Zīmola somu maisi', 'Pielāgoti drukātie formāti'] },
       { id: 'industrial', title: 'Rūpnieciskais un pielāgotais', description: 'Smagās slodzes polietilēna maisi un pielāgota formāta iepakojums rūpnieciskiem, komerciāliem un liela apjoma lietojumiem. Pieejamas pielāgotas dimensijas un materiāla biezums.', applications: ['Rūpnieciskās detaļas', 'Beramkravu iepakojums', 'Komerciāla piegāde', 'Pielāgotas B2B prasības'], bagTypes: ['Smagās slodzes PE maisi', 'Pielāgotu dimensiju maisi', 'Liela formāta maisi', 'Maisi ar vārstu vai aizdari'] },
-    ],
-  },
-  industries: {
-    kicker: 'Nozares',
-    heading: 'Iepakojums jūsu nozarei',
-    body: 'Dažādām nozarēm ir dažādas iepakojuma prasības. Mēs piegādājam elastīgā iepakojuma risinājumus, kas atbilst jūsu nozares specifiskajām vajadzībām — neatkarīgi no tā, vai darbojaties pārtikas ražošanā, mazumtirdzniecībā vai biroja piederumu jomā.',
-    packagingGoals: 'Iepakojuma mērķi',
-    relevantProducts: 'Saistītie produkti',
-    requestInquiry: 'Pieprasīt piedāvājumu',
-    browseProducts: 'Pārlūkot produktus',
-    segments: [
-      { id: 'bakery', title: 'Maizes cepumi un konditorejas ražotāji', description: 'Maizes cepumiem un konditorejas ražotājiem nepieciešams higiēnisks, pievilcīgs iepakojums, kas aizsargā svaigumu un atbalsta demonstrēšanu. Mēs ražojam dažādus caurspīdīgu un drukātu maisu formātus, kas piemēroti maizes cepumu ražošanas darba plūsmām.', goals: ['Aizsargāt svaigumu un novērst piesārņošanu', 'Skaidri demonstrēt produktu gala patērētājam', 'Atbalstīt mazumtirdzniecības un tirdzniecības vietas prezentāciju', 'Piemēroties dažādiem maizes klaipu un konditorejas izmēriem'], products: ['Perforēti caurspīdīgi PP maisi maizei', 'Euro pakara maisi fasētiem konditorejas izstrādājumiem', 'Maisi ar apakšas locījumu klaipiem un ruļļiem', 'Drukāti maisi zīmola maizes produktiem', 'Maisi ar pašlīmējošās lentas aizdari'] },
-      { id: 'food', title: 'Pārtikas ražotāji', description: 'Pārtikas ražotājiem, kas iepērk iepakojumu lielos apjomos, nepieciešama konsekventā kvalitāte, atbilstoša atbilstība pārtikas kontaktam un uzticama piegāde. Mēs piegādājam gan vienkāršu, gan drukātu iepakojumu sausai pārtikai, konditorejas izstrādājumiem un pārstrādātas pārtikas lietojumiem.', goals: ['Pārtikai drošu materiālu atbilstība', 'Konsekventas maisu dimensijas ražošanas līnijas saderībai', 'Pieejams liela apjoma atkārtotiem pasūtījumiem', 'Iespējas gan zīmola, gan vienkāršam iepakojumam'], products: ['PP un PE maisi tiešam pārtikas kontaktam', 'Maisi ar vārstiem miltu un pulverveida produktiem', 'Plakanie noslēgtie maisi konditorejas izstrādājumiem', 'Pielāgots drukāts iepakojums zīmola līnijām', 'Maisi ar euro pakaru mazumtirdzniecības displeja vajadzībām'] },
-      { id: 'retail', title: 'Mazumtirdzniecība un reklāma', description: 'Mazumtirgotājiem un zīmolu īpašniekiem nepieciešams iepakojums, kas komunicē zīmola identitāti un atbalsta plauktu klātbūtni. Mēs ražojam drukātus maisus un zīmola iepakojumu mazumtirdzniecības un reklāmas nolūkiem.', goals: ['Spēcīga vizuāla klātbūtne plauktos', 'Zīmola konsekvence visā iepakojumā', 'Piemērots mazumtirdzniecības displeja formātiem', 'Reklāmas un sezonāla iepakojuma iespējas'], products: ['Pielāgoti drukāti PP maisi ar logotipu', 'Somu maisi ar zīmolu', 'Maisi ar euro caurumu pakāršanai displejā', 'Privātās etiķetes ražošanas sērijas', 'Patēriņa preču iepakojuma maisi'] },
-      { id: 'office', title: 'Biroja un kancelejas preces', description: 'Izdevniecībām, kancelejas preču ražotājiem un biroja piederumu uzņēmumiem nepieciešams dzidrs, aizsargājošs iepakojums, kas ļauj redzēt produktu, vienlaikus aizsargājot no putekļiem un bojājumiem uzglabāšanas un transportēšanas laikā.', goals: ['Caurspīdīga fasēta produkta prezentācija', 'Aizsardzība no putekļiem, mitruma un mehāniskiem bojājumiem', 'Piemērots kancelejas precēm, grāmatām un drukātajām precēm', 'Tīra profesionāla izskats B2B sūtījumiem'], products: ['Dzidri PP plakanie maisi grāmatām un blociņiem', 'Maisi ar pašlīmējošās lentas aizdari', 'Pielāgota izmēra maisi kancelejas komplektiem', 'Euro pakara maisi mazumtirdzniecības displejam', 'Drukātie maisi zīmola kancelejas precēm'] },
     ],
   },
   customPrinting: {
@@ -1118,13 +1027,6 @@ const ru: Translations = {
       printed: 'Фирменные / печатные пакеты',
       industrial: 'Промышленные и нестандартные',
     },
-    industries: 'Отрасли',
-    industriesChildren: {
-      bakery: 'Хлебопекарни и кондитеры',
-      food: 'Производители продуктов питания',
-      retail: 'Розница и промоупаковка',
-      office: 'Офис и канцтовары',
-    },
     customPrinting: 'Печать на заказ',
     manufacturing: 'Производство',
     contact: 'Контакты',
@@ -1145,7 +1047,6 @@ const ru: Translations = {
     ],
     companyLinks: [
       { label: 'Производство', href: '/ru/manufacturing' },
-      { label: 'Отрасли', href: '/ru/industries' },
       { label: 'Печать на заказ', href: '/ru/custom-printing' },
       { label: 'Контакты', href: '/ru/contact' },
       { label: 'Запросить предложение', href: '/ru/contact' },
@@ -1177,10 +1078,6 @@ const ru: Translations = {
     viewDetails: 'Подробнее',
     whyKicker: 'Почему VELPLEV',
     whyHeading: 'Что мы предлагаем в области поставки упаковки',
-    industriesKicker: 'Отрасли',
-    industriesHeading: 'Упаковка для нескольких секторов бизнеса',
-    industriesBody: 'Мы поставляем упаковку предприятиям в сфере пищевого производства, розничной торговли, полиграфии и промышленности. Наше производство настроено для нестандартных форматов и повторных заказов B2B.',
-    viewIndustrySolutions: 'Смотреть отраслевые решения',
     printingKicker: 'Печать на заказ',
     printingHeading: 'Печатная упаковка с вашим брендом',
     printingBody: 'Мы производим индивидуально напечатанные пакеты с вашим логотипом, дизайном бренда или информацией о продукте. Подходит для розничной упаковки, рекламных пакетов и производственных серий под частной маркой.',
@@ -1210,16 +1107,43 @@ const ru: Translations = {
       { title: 'Производственный опыт', body: 'Практические знания из реальных производственных заказов. Мы понимаем требования к упаковке и можем консультировать по форматам, материалам и возможностям.' },
       { title: 'Обработка заказов B2B', body: 'Процесс на основе запросов с прямой коммуникацией. Мы отвечаем на запросы с конкретными предложениями, ценами и сроками производства.' },
     ],
-    industries: [
-      'Хлебопекарни',
-      'Кондитерские производства',
-      'Производители продуктов питания',
-      'Розница и супермаркеты',
-      'Бренды потребительских товаров',
-      'Компании офисных принадлежностей',
-      'Издательства и полиграфия',
-      'Рекламная упаковка',
-    ],
+    about: {
+      kicker: 'О компании',
+      heading: 'Компания Velplev работает на рынке упаковки с 1995 года',
+      intro1:
+        'Высокий уровень производственных технологий, основанный на импортном оборудовании и профессионализме сотрудников, позволяет достигать отличного качества упаковки.',
+      intro2:
+        'Компания производит широкий ассортимент упаковки из плёнок BOPP, CPP, LDPE, HDPE, PA/PE, PET/PE, Mono PP, а также из бумаги и фольги.',
+      foodHeading: 'Пищевая упаковка',
+      foodItems: [
+        'для овощей и фруктов',
+        'для сыпучих продуктов',
+        'для кондитерских изделий',
+        'для хлебобулочной продукции',
+        'для рыбной и мясной продукции',
+        'для замороженных продуктов',
+        'для кофе и чая',
+        'пакеты с печатью',
+      ],
+      nonFoodHeading: 'Непищевая упаковка',
+      nonFoodItems: [
+        'упаковка для животных',
+        'упаковка для грунта и строительных материалов',
+        'упаковка для медицинских товаров',
+        'упаковка для канцелярии',
+      ],
+      typesHeading: 'Виды производимой упаковки',
+      typesItems: [
+        'пакеты из BOPP, CPP, LDPE, HDPE',
+        'вакуумные пакеты',
+        'пакеты с zip-замком',
+        'пакеты с еврослотом (евроотверстием)',
+        'пакеты с липкой лентой',
+        'DOY PACK (дой-пак)',
+      ],
+      closing:
+        'Каждый запрос тщательно оценивается, и подбираются оптимальные решения на основе технологических возможностей и накопленного опыта. Основные принципы работы — индивидуальный подход к каждому клиенту, своевременное выполнение заказов и гарантированное качество изделий. Дружный коллектив, в котором каждый отвечает за свой участок работы, обеспечивает внимательное отношение к заказчику, оперативное решение спорных вопросов и строгий контроль качества продукции. Приглашаем вас к сотрудничеству. Уверены, что оно будет взаимовыгодным и плодотворным.',
+    },
   },
   products: {
     kicker: 'Продукция',
@@ -1241,21 +1165,6 @@ const ru: Translations = {
       { id: 'office', title: 'Офисная и печатная упаковка', description: 'Защитные прозрачные пакеты для книг, канцтоваров, блокнотов и печатных материалов. Прозрачные полипропиленовые пакеты для демонстрации товара при защите от пыли и влаги.', applications: ['Книги и блокноты', 'Наборы канцтоваров', 'Печатные материалы', 'Наборы офисных принадлежностей'], bagTypes: ['Плоские прозрачные пакеты', 'Пакеты с еврослотом', 'Пакеты с клейкой лентой', 'Пакеты нестандартных размеров'] },
       { id: 'printed', title: 'Фирменные / печатные пакеты', description: 'Индивидуальные печатные гибкие упаковочные пакеты с логотипом, продуктом или дизайном бренда. Печать на материале ПП или ПЭ. Подходит для розницы, рекламы и производства под частной маркой.', applications: ['Брендированная розничная упаковка', 'Рекламные пакеты', 'Производство под частной маркой', 'Упаковка для мероприятий и маркетинга'], bagTypes: ['Печатные пакеты ПП', 'Печатные пакеты ПЭ', 'Брендированные сумки', 'Нестандартные печатные форматы'] },
       { id: 'industrial', title: 'Промышленные и нестандартные', description: 'Прочные пакеты из полиэтилена и упаковка нестандартного формата для промышленных, коммерческих и крупносерийных применений. Доступны нестандартные размеры и толщина материала.', applications: ['Промышленные компоненты', 'Упаковка сыпучих товаров', 'Коммерческие поставки', 'Нестандартные требования B2B'], bagTypes: ['Прочные пакеты ПЭ', 'Пакеты нестандартных размеров', 'Крупноформатные пакеты', 'Пакеты с клапаном или застёжкой'] },
-    ],
-  },
-  industries: {
-    kicker: 'Отрасли',
-    heading: 'Упаковка для вашей отрасли',
-    body: 'В разных отраслях разные требования к упаковке. Мы поставляем решения для гибкой упаковки, соответствующие конкретным потребностям вашего сектора — будь то пищевое производство, розница или канцтовары.',
-    packagingGoals: 'Цели упаковки',
-    relevantProducts: 'Подходящая продукция',
-    requestInquiry: 'Запросить предложение',
-    browseProducts: 'Смотреть продукцию',
-    segments: [
-      { id: 'bakery', title: 'Хлебопекарни и кондитеры', description: 'Хлебопекарням и кондитерским производствам требуется гигиеничная, привлекательная упаковка, сохраняющая свежесть и поддерживающая выкладку. Мы производим прозрачные и печатные форматы пакетов, подходящие для рабочих процессов хлебопекарного производства.', goals: ['Сохранять свежесть и предотвращать загрязнение', 'Чётко демонстрировать товар конечному покупателю', 'Поддерживать розничную и прикассовую выкладку', 'Подходить для различных размеров хлеба и выпе��ки'], products: ['Перфорированные прозрачные пакеты ПП для хлеба', 'Пакеты с еврослотом для упакованной выпечки', 'Пакеты с нижним сгибом для буханок и булочек', 'Печатные пакеты для брендированных хлебобулочных изделий', 'Пакеты с клейкой лентой'] },
-      { id: 'food', title: 'Производители продуктов питания', description: 'Производителям продуктов питания, закупающим упаковку в больших объёмах, нужны стабильное качество, соответствие требованиям контакта с пищей и надёжные поставки. Мы поставляем простую и печатную упаковку для сухих продуктов, кондитерских изделий и переработанных пищевых продуктов.', goals: ['Соответствие требованиям безопасности пищевых материалов', 'Стабильные размеры пакетов для совместимости с производственной линией', 'Доступность для крупносерийных повторных заказов', 'Варианты как для брендированной, так и для простой упаковки'], products: ['Пакеты ПП и ПЭ для прямого контакта с пищей', 'Пакеты с клапанами для муки и порошковых продуктов', 'Плоские запаянные пакеты для кондитерских изделий', 'Нестандартная печатная упаковка для брендированных линий', 'Пакеты с еврослотом для розничного дисплея'] },
-      { id: 'retail', title: 'Розница и промоупаковка', description: 'Розничным торговцам и владельцам брендов нужна упаковка, которая передаёт идентичность бренда и поддерживает присутствие на полке. Мы производим печатные пакеты и брендированную упаковку для розничных и рекламных целей.', goals: ['Сильное визуальное присутствие на полке', 'Последовательность бренда в упаковке', 'Подходит для форматов розничного дисплея', 'Варианты рекламной и сезонной упаковки'], products: ['Нестандартные печатные пакеты ПП с логотипом', 'Сумки-пакеты с брендингом', 'Пакеты с еврощелью для вешалок дисплея', 'Производственные серии под частной маркой', 'Упаковочные пакеты для потребительских товаров'] },
-      { id: 'office', title: 'Офис и канцтовары', description: 'Издательствам, производителям канцтоваров и компаниям офисных принадлежностей нужна прозрачная, защитная упаковка, позволяющая видеть товар, защищая от пыли и повреждений при хранении и транспортировке.', goals: ['Прозрачная демонстрация упакованного товара', 'Защита от пыли, влаги и механических повреждений', 'Подходит для канцтоваров, книг и печатных изделий', 'Чистый профессиональный вид для B2B отгрузки'], products: ['Прозрачные плоские пакеты ПП для книг и блокнотов', 'Пакеты с клейкой лентой', 'Пакеты нестандартных размеров для наборов канцтоваров', 'Пакеты с еврослотом для розничного дисплея', 'Печатные пакеты для брендированных канцтоваров'] },
     ],
   },
   customPrinting: {

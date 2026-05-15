@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Package } from 'lucide-react'
 import LocaleHeader from '@/components/LocaleHeader'
 import LocaleFooter from '@/components/LocaleFooter'
 import LocaleCtaBand from '@/components/LocaleCtaBand'
@@ -42,9 +42,15 @@ export default function LocaleProductsPage({ locale, t }: Props) {
           <div className="max-w-7xl mx-auto flex flex-col gap-16">
             {p.categories.map((cat, i) => (
               <div key={cat.id} id={cat.id} className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start scroll-mt-20">
-                <div className={`relative rounded-xl overflow-hidden shadow aspect-[4/3] ${i % 2 === 1 ? 'lg:order-2' : ''}`}>
-                  <Image src={categoryImages[cat.id]} alt={cat.title} fill className="object-cover" />
-                </div>
+                {cat.id === 'consumer' || cat.id === 'industrial' ? (
+                  <div className={`relative rounded-xl overflow-hidden shadow aspect-[4/3] bg-brand-teal-light flex items-center justify-center ${i % 2 === 1 ? 'lg:order-2' : ''}`}>
+                    <Package className="w-20 h-20 text-primary/25" strokeWidth={1.25} />
+                  </div>
+                ) : (
+                  <div className={`relative rounded-xl overflow-hidden shadow aspect-[4/3] ${i % 2 === 1 ? 'lg:order-2' : ''}`}>
+                    <Image src={categoryImages[cat.id]} alt={cat.title} fill className="object-cover" />
+                  </div>
+                )}
                 <div className={i % 2 === 1 ? 'lg:order-1' : ''}>
                   <h2 className="text-2xl font-bold text-brand-graphite mb-3">{cat.title}</h2>
                   <p className="text-muted-foreground leading-relaxed mb-6">{cat.description}</p>

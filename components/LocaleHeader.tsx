@@ -31,16 +31,6 @@ export default function LocaleHeader({ locale, t }: Props) {
         { label: t.nav.productsChildren.industrial, href: `${prefix}/products#industrial` },
       ],
     },
-    {
-      label: t.nav.industries,
-      href: `${prefix}/industries`,
-      children: [
-        { label: t.nav.industriesChildren.bakery, href: `${prefix}/industries#bakery` },
-        { label: t.nav.industriesChildren.food, href: `${prefix}/industries#food` },
-        { label: t.nav.industriesChildren.retail, href: `${prefix}/industries#retail` },
-        { label: t.nav.industriesChildren.office, href: `${prefix}/industries#office` },
-      ],
-    },
     { label: t.nav.customPrinting, href: `${prefix}/custom-printing` },
     { label: t.nav.manufacturing, href: `${prefix}/manufacturing` },
     { label: t.nav.contact, href: `${prefix}/contact` },

@@ -104,16 +104,43 @@ const whyVelplev = [
   },
 ]
 
-const industries = [
-  'Bakeries',
-  'Confectionery producers',
-  'Food manufacturers',
-  'Retail & supermarkets',
-  'Consumer goods brands',
-  'Office supply companies',
-  'Publishing & print',
-  'Promotional packaging',
-]
+const about = {
+  kicker: 'About VELPLEV',
+  heading: 'Producing flexible packaging since 1995',
+  intro1:
+    'A high level of production technology — based on imported equipment and the professionalism of our employees — allows us to consistently deliver excellent packaging quality.',
+  intro2:
+    'We manufacture a wide range of packaging from BOPP, CPP, LDPE, HDPE, PA/PE, PET/PE, and Mono PP films, as well as paper and foil.',
+  foodHeading: 'Food packaging',
+  foodItems: [
+    'Vegetables and fruits',
+    'Bulk and dry products',
+    'Confectionery',
+    'Bakery products',
+    'Fish and meat products',
+    'Frozen products',
+    'Coffee and tea',
+    'Printed bags',
+  ],
+  nonFoodHeading: 'Non-food packaging',
+  nonFoodItems: [
+    'Pet food and pet products',
+    'Soil and construction materials',
+    'Medical products',
+    'Stationery and office supplies',
+  ],
+  typesHeading: 'Types of packaging produced',
+  typesItems: [
+    'BOPP, CPP, LDPE, HDPE bags',
+    'Vacuum bags',
+    'Zip-lock bags',
+    'Bags with euro slot (euro hole)',
+    'Bags with adhesive tape',
+    'DOY PACK (stand-up pouches)',
+  ],
+  closing:
+    'Every inquiry is carefully evaluated and matched with an optimal solution based on our technical capabilities and accumulated experience. Our core principles are an individual approach to each client, on-time order fulfilment, and guaranteed product quality. A close-knit team — where each person is responsible for their part of the process — ensures attentive customer service, prompt resolution of any issues, and strict quality control. We welcome new partnerships and are confident our cooperation will be mutually beneficial and productive.',
+}
 
 const trustBullets = [
   'Custom manufacturing to specification',
@@ -263,46 +290,65 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Industries */}
+        {/* About company */}
         <section className="py-20 px-4 md:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="max-w-3xl mb-10">
+              <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-2">
+                {about.kicker}
+              </p>
+              <h2 className="text-3xl font-bold text-brand-graphite text-balance">
+                {about.heading}
+              </h2>
+              <p className="mt-4 text-muted-foreground leading-relaxed">{about.intro1}</p>
+              <p className="mt-3 text-muted-foreground leading-relaxed">{about.intro2}</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-2">
-                  Industries
-                </p>
-                <h2 className="text-3xl font-bold text-brand-graphite text-balance">
-                  Packaging for multiple business sectors
-                </h2>
-                <p className="mt-4 text-muted-foreground leading-relaxed">
-                  We supply packaging to businesses across food production, retail, printing, and
-                  industrial sectors. Our production is configured for custom formats and repeat B2B
-                  orders.
-                </p>
-                <div className="mt-8 grid grid-cols-2 gap-3">
-                  {industries.map((ind) => (
-                    <div key={ind} className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                      <span className="text-sm text-foreground">{ind}</span>
-                    </div>
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-primary mb-4">
+                  {about.foodHeading}
+                </h3>
+                <ul className="flex flex-col gap-2">
+                  {about.foodItems.map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                      <span className="text-sm text-foreground">{item}</span>
+                    </li>
                   ))}
-                </div>
-                <Link
-                  href="/industries"
-                  className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all"
-                >
-                  View industry solutions <ArrowRight className="w-4 h-4" />
-                </Link>
+                </ul>
               </div>
-              <div className="relative rounded-xl overflow-hidden shadow aspect-[4/3]">
-                <Image
-                  src="/images/manufacturing.jpg"
-                  alt="VELPLEV manufacturing facility"
-                  fill
-                  className="object-cover"
-                />
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-primary mb-4">
+                  {about.nonFoodHeading}
+                </h3>
+                <ul className="flex flex-col gap-2">
+                  {about.nonFoodItems.map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                      <span className="text-sm text-foreground">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-primary mb-4">
+                  {about.typesHeading}
+                </h3>
+                <ul className="flex flex-col gap-2">
+                  {about.typesItems.map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                      <span className="text-sm text-foreground">{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
+
+            <p className="mt-12 text-muted-foreground leading-relaxed max-w-4xl">
+              {about.closing}
+            </p>
           </div>
         </section>
 
