@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#06346f"/>
+      <stop offset="1" stop-color="#07489a"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" x2="1">
+      <stop offset="0" stop-color="#f1c46b"/>
+      <stop offset="1" stop-color="#be9751"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#031a38" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1030" cy="95" r="190" fill="#ffffff" opacity="0.06"/>
+  <circle cx="110" cy="560" r="230" fill="#ffffff" opacity="0.05"/>
+
+  <g transform="translate(705 90)" filter="url(#shadow)">
+    <rect x="45" y="0" width="300" height="440" rx="24" fill="#f8fafc"/>
+    <path d="M70 0h250v72H70z" fill="#e9eef5"/>
+    <path d="M78 82h235" stroke="#d5dde8" stroke-width="8" stroke-linecap="round"/>
+    <path d="M88 96h215" stroke="#edf2f7" stroke-width="6" stroke-linecap="round"/>
+    <path d="M70 414c65 18 181 18 250 0v26H70z" fill="#e7edf5"/>
+    <ellipse cx="195" cy="246" rx="110" ry="62" fill="none" stroke="#07489a" stroke-width="8"/>
+    <text x="195" y="240" text-anchor="middle" fill="#be9751" font-family="Arial, Helvetica, sans-serif" font-size="50" font-weight="700">VELPLEV</text>
+    <text x="195" y="278" text-anchor="middle" fill="#07489a" font-family="Arial, Helvetica, sans-serif" font-size="24" letter-spacing="4">packaging company</text>
+  </g>
+
+  <g transform="translate(80 84)">
+    <text x="0" y="0" fill="#ffe2a6" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" letter-spacing="0">IEPAKOJUMA RAŽOŠANA RĪGĀ KOPŠ 1995. GADA</text>
+    <text x="0" y="88" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="700">VELPLEV</text>
+    <text x="0" y="158" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="700">Pārtikas un nepārtikas</text>
+    <text x="0" y="220" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="700">iepakojuma ražošana</text>
+    <text x="0" y="296" fill="#dceaff" font-family="Arial, Helvetica, sans-serif" font-size="30">BOPP • CPP • LDPE • HDPE • PA/PE • PET/PE • Mono PP</text>
+    <text x="0" y="348" fill="#dceaff" font-family="Arial, Helvetica, sans-serif" font-size="30">DOY PACK • vakuuma pakas • zip • apdruka ar logo</text>
+    <rect x="0" y="412" width="322" height="62" rx="8" fill="url(#gold)"/>
+    <text x="161" y="453" text-anchor="middle" fill="#23180a" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">velplev.lv</text>
+  </g>
+</svg>
