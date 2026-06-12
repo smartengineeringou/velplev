@@ -24,4 +24,11 @@
 
   window.addEventListener("scroll", syncScrolledState, { passive: true });
   syncScrolledState();
+
+  if (new URLSearchParams(window.location.search).get("sent") === "1") {
+    var notice = document.getElementById("form-success");
+    if (notice) {
+      notice.classList.add("is-visible");
+    }
+  }
 })();

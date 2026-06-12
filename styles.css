@@ -525,6 +525,14 @@ h3 {
   gap: 6px;
 }
 
+.hidden-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .field-full {
   grid-column: 1 / -1;
 }
@@ -550,6 +558,21 @@ textarea {
 textarea {
   min-height: 132px;
   resize: vertical;
+}
+
+.form-notice {
+  display: none;
+  margin: 0 0 18px;
+  padding: 14px 16px;
+  border: 1px solid #bbf7d0;
+  border-radius: 6px;
+  color: #14532d;
+  background: #f0fdf4;
+  font-weight: 700;
+}
+
+.form-notice.is-visible {
+  display: block;
 }
 
 .gallery-grid {

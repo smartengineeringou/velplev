@@ -100,8 +100,17 @@
 
         <section class="form-panel" aria-label="Cenu pieprasījuma forma">
           <h2>Cenu pieprasījums</h2>
-          <p class="section-lead">Aizpildiet laukus, un forma sagatavos e-pastu ar pasūtījuma informāciju.</p>
-          <form action="mailto:velplev@inbox.lv" method="post" enctype="text/plain">
+          <p class="section-lead">Aizpildiet laukus, un pieprasījums tiks nosūtīts uz VELPLEV e-pastu. Ja forma netiek nosūtīta, izmantojiet pogu “Rakstīt e-pastu”.</p>
+          <div class="form-notice" id="form-success">Paldies! Pieprasījums ir nosūtīts.</div>
+          <form action="https://formsubmit.co/velplev@inbox.lv" method="POST">
+            <input type="hidden" name="_subject" value="Cenu pieprasījums no velplev.vercel.app">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://velplev.vercel.app/Kontakti.html?sent=1#pieprasijums">
+            <div class="hidden-field" aria-hidden="true">
+              <label for="website">Website</label>
+              <input id="website" name="_honey" tabindex="-1" autocomplete="off">
+            </div>
             <div class="form-grid">
               <div class="field">
                 <label for="name">Vārds</label>
